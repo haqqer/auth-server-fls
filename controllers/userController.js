@@ -9,9 +9,10 @@ module.exports = {
   index: async function(req, res) {
     try {
       const filters = {
-        'info.name': req.query.name || '',
+//        'info.fullName': '/'+req.query.name+'/i' || '',
         'info.room': req.query.room || ''
       }
+      console.log(filters);
       let result = await findAllUsers(filters)
       res.send(result)
     } catch (error) {
